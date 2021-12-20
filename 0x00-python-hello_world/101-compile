@@ -1,7 +1,8 @@
 #/bin/bash
-python3 -m my_compile $PYFILE
+python3 -m compileall $PYFILE
 cd __pycache__
 mv *.pyc $PYFILE'c'
 mv $PYFILE'c' ..
 cd ..
+chmod +x $PYFILE'c'
 rmdir __pycache__
