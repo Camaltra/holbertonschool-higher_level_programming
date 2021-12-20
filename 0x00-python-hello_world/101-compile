@@ -1,5 +1,5 @@
 #/bin/bash
-python3 -m compileall main.py
+python3 -m my_compile $PYFILE
 cd __pycache__
 mv *.pyc $PYFILE'c'
 mv $PYFILE'c' ..
