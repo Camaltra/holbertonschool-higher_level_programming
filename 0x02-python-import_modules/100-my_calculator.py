@@ -20,6 +20,6 @@ if __name__ == '__main__':
         elif sys.argv[2] == '-':
             print("{} {} {} = {}".format(a, sys.argv[2], b, sub(a, b)))
         elif sys.argv[2] == '*':
-            print("{} {} {} = {}".format(a,sys.argv[2], b, mul(a, b)))
+            print("{} {} {} = {}".format(a, sys.argv[2], b, mul(a, b)))
         else:
             print("{} {} {} = {}".format(a, sys.argv[2], b, div(a, b)))
