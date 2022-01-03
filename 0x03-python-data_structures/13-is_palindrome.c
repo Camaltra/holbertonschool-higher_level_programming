@@ -1,7 +1,27 @@
 #include "lists.h"
 #include <stdio.h>
 
-int check_palindrome(int *list_of_int, int stop);
+/**
+* reverse_list - Reverse a linked list
+*
+* @head: The first elem of the elem of the linked list
+*
+* Return: The new first elem of the reverse linked list (aka the last)
+*/
+listint_t *reverse_list(listint_t **head)
+{
+	listint_t *prev = NULL, *next = NULL, *cur = *head;
+
+	while (cur != NULL)
+	{
+		next = cur->next;
+		cur->next = prev;
+		prev = cur;
+		cur = next;
+	}
+	cur = prev;
+	return (cur);
+}
 
 /**
 * is_palindrome - Check if a given linked-list is a palindrome or not
@@ -12,52 +32,26 @@ int check_palindrome(int *list_of_int, int stop);
 */
 int is_palindrome(listint_t **head)
 {
-	listint_t *browse = *head;
-	int *int_from_list = NULL;
-	int len_list = 0, i = 0;
+	listint_t *fast = *head, *slow = *head;
 
-	if (browse == NULL)
+	if (*head == NULL)
 		return (1);
-	while (browse != NULL)
+
+	while (fast->next != NULL && fast->next->next)
 	{
-		len_list++;
-		browse = browse->next;
+		fast = fast->next->next;
+		slow = slow->next;
 	}
 
-	int_from_list = malloc(sizeof(int) * len_list);
-	if (!int_from_list)
-		return (0);
-	browse = *head;
-	while (browse != NULL)
+	slow = reverse_list(&slow);
+	fast = *head;
+
+	while (slow && fast)
 	{
-		int_from_list[i] = browse->n;
-		browse = browse->next;
-		i++;
-	}
-	return (check_palindrome(int_from_list, i));
-}
-
-
-/**
-* check_palindrome - Check if a array of number is a palindrome or not
-*
-* @list_of_int: The list of number to check
-* @stop: The end of the list
-*
-* Return: 0 is not, 1 if it.
-*/
-int check_palindrome(int *list_of_int, int stop)
-{
-	int j, middle = (stop / 2);
-
-	for (j = 0, stop -= 1; j < middle; j++, stop--)
-	{
-		if (list_of_int[j] != list_of_int[stop])
-		{
-			free(list_of_int);
+		if (slow->n != fast->n)
 			return (0);
-		}
+		slow = slow->next;
+		fast = fast->next;
 	}
-	free(list_of_int);
 	return (1);
 }
