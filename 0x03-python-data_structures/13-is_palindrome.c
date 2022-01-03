@@ -25,6 +25,8 @@ int is_palindrome(listint_t **head)
 	}
 
 	int_from_list = malloc(sizeof(int) * len_list);
+	if (!int_from_list)
+		return (0);
 	browse = *head;
 	while (browse != NULL)
 	{
