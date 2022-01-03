@@ -2,13 +2,5 @@
 
 
 def print_matrix_integer(matrix=[[]]):
-
-    if len(matrix) - 1 == 0:
-        print()
-
-    for i in range(len(matrix)):
-        for j in range(len(matrix[i])):
-            if j == len(matrix[i]) - 1:
-                print("{}".format(matrix[i][j]))
-            else:
-                print("{}".format(matrix[i][j]), end=" ")
+    for row in matrix:
+        print(" ".join("{:d}".format(i) for i in row))
