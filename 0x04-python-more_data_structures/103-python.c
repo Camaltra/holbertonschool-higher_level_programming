@@ -18,7 +18,7 @@ void print_python_list(PyObject *p)
 		size = ((PyVarObject *)p)->ob_size;
 		alloc = ((PyListObject *)p)->allocated;
 
-		printf("[*] Python info list\n");
+		printf("[*] Python list info\n");
 		printf("[*] Size of the Python List = %lu\n", size);
 		printf("[*] Allocated = %lu\n", alloc);
 
