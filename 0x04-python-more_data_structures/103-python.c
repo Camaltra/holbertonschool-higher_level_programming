@@ -54,10 +54,10 @@ void print_python_bytes(PyObject *p)
 	printf("  size: %d\n", size);
 	printf("  trying string: %s\n", ((PyBytesObject *)p)->ob_sval);
 
-	size >= 10 ? size = 10 : size;
+	size > 10 ? size = 10 : size++;
 
-	printf("  first %d bytes: ", size + 1);
-	for (i = 0; i <= size; i++)
+	printf("  first %d bytes: ", size);
+	for (i = 0; i < size; i++)
 	{
 		printf("%02hhx", ((PyBytesObject *)p)->ob_sval[i]);
 		if (i == size)
