@@ -47,7 +47,7 @@ void print_python_bytes(PyObject *p)
 	printf("[.] bytes object info\n");
 	if (strcmp(p->ob_type->tp_name, "bytes") != 0)
 	{
-		printf("  [ERROR] Invalid Bytes Object");
+		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
 	size = ((PyVarObject *)p)->ob_size;
@@ -60,7 +60,7 @@ void print_python_bytes(PyObject *p)
 	for (i = 0; i < size; i++)
 	{
 		printf("%02hhx", ((PyBytesObject *)p)->ob_sval[i]);
-		if (i == size)
+		if (i > size - 2)
 			printf("\n");
 		else
 			printf(" ");
