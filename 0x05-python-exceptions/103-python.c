@@ -17,6 +17,8 @@ void print_python_list(PyObject *p)
 	size = ((PyVarObject *)p)->ob_size;
 	alloc = ((PyListObject *)p)->allocated;
 
+	fflush(stdout);
+
 	printf("[*] Python list info\n");
 	if (strcmp(p->ob_type->tp_name, "list") != 0)
 	{
@@ -46,6 +48,8 @@ void print_python_list(PyObject *p)
 void print_python_bytes(PyObject *p)
 {
 	int size, i;
+
+	fflush(stdout);
 
 	printf("[.] bytes object info\n");
 	if (strcmp(p->ob_type->tp_name, "bytes") != 0)
