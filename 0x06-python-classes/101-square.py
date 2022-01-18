@@ -97,7 +97,7 @@ class Square:
         """
         string = ""
         if self.__size == 0:
-            string += '\n'
+            pass
         else:
             for i in range(self.position[1]):
                 string += '\n'
