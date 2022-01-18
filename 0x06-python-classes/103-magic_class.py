@@ -1,8 +1,7 @@
 #!/usr/bin/python3
+"""Create a Magic Class"""
 
 import math
-
-"""Create a Magic Class"""
 
 
 class MagicClass:
@@ -17,7 +16,7 @@ class MagicClass:
         Returns: Nothing
         """
         self.__radius = 0
-        if type(radius) is not int or type(radius) is not float:
+        if type(radius) is not int and type(radius) is not float:
             raise TypeError("radius must be a number")
         self.__radius = radius
 
