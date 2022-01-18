@@ -34,9 +34,10 @@ class Square:
             TypeError: Error if value not an int tuple
         Returns: None
         """
-        if not all(isinstance(v, int) for v in value):
+        if isinstance(value, tuple) and len(value) == 2:
+            self.__position = value
+        else:    
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
 
     @property
     def size(self):
