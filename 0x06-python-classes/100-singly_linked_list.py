@@ -63,6 +63,7 @@ class Node:
 
 
 class SinglyLinkedList:
+    """Create a Linked list"""
     def __init__(self):
         """
         Init the sll
