@@ -60,6 +60,7 @@ Typical Test         |
     <BLANKLINE>
     igitur ne illud quidem.
     <BLANKLINE>
+    Salut je m'envol 
 
     >>> text_indentation("           Lorem ipsum dolor sit amet, consectetur adipiscing elit. ")
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.

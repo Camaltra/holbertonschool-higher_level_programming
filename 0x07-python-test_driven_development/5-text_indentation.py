@@ -30,3 +30,7 @@ def text_indentation(text):
                 buf = buf[1:]
             print("{}".format(buf), end="\n\n")
             buf = ""
+    if buf != "":
+        while buf != "" and buf[0] == " ":
+                buf = buf[1:]
+        print("{}".format(buf), end="")
