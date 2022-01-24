@@ -141,14 +141,14 @@ class Rectangle:
         print("Bye rectangle...")
 
     @staticmethod
-    """
-    Check if the first rect_1 is greater than or equal to react_2
-    Args:
-        rect_1 (Rectangle): The first rect
-        rect_2 (Rectangle): The second rect
-    Returns: The biggest rect
-    """
     def bigger_or_equal(rect_1, rect_2):
+        """
+        Check if the first rect_1 is greater than or equal to react_2
+        Args:
+            rect_1 (Rectangle): The first rect
+            rect_2 (Rectangle): The second rect
+        Returns: The biggest rect
+        """
         if type(rect_1) is not Rectangle:
             raise TypeError('rect_1 must be an instance of Rectangle')
         if type(rect_2) is not Rectangle:
@@ -159,12 +159,12 @@ class Rectangle:
             return rect_2
 
     @classmethod
-    """
-    Create a new square, by create it
-    Args:
-        cls
-        size (int): The size of the square
-    Returns: The new square
-    """
     def square(cls, size=0):
+        """
+        Create a new square, by create it
+        Args:
+            cls
+            size (int): The size of the square
+        Returns: The new square
+        """
         return Rectangle(size, size)
