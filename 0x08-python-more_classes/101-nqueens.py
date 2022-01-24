@@ -21,7 +21,7 @@ if __name__ == "__main__":
         for i in range(x, numOfQueen):
             res[i][1] = None
 
-    def reject(x, y):
+    def possible(x, y):
         for z in range(numOfQueen):
             if y == res[z][1]:
                 return False
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     def nqueens(x):
         for y in range(numOfQueen):
             clearRes(x)
-            if reject(x, y):
+            if possible(x, y):
                 res[x][1] = y
                 if (x == numOfQueen - 1):
                     print(res)
