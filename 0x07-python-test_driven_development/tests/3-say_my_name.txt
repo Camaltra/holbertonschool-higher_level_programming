@@ -31,6 +31,9 @@ Typical Test         |
     >>> say_my_name("Mickael")
     My name is Mickael 
 
+    >>> say_my_name("", "")
+    My name is  
+
 ======================
 Error case           |
 ======================
@@ -66,6 +69,11 @@ Error Type
     ...
     TypeError: last_name must be a string
 
+    >>> say_my_name(None, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
     >>> say_my_name(12, "Boillaud")
     Traceback (most recent call last):
     ...
@@ -80,3 +88,18 @@ Error Type
     Traceback (most recent call last):
     ...
     TypeError: first_name must be a string
+
+    >>> say_my_name(tuple, "Boillaud")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name((2, 3), "Boillaud")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+    
+    >>> say_my_name("Mickael", (3, 4))
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
