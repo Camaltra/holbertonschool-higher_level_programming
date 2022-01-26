@@ -40,6 +40,9 @@ Int one
     >>> add_integer(1)
     99
 
+    >>> add_integer(-2)
+    96
+
 Float one
 ----------------------
 
@@ -51,6 +54,12 @@ Float one
 
     >>> add_integer(1, -3.36)
     -2
+
+    >>> add_integer(-2.5)
+    96
+
+    >>> add_integer(-1.5, -2.5)
+    -3
 
 ======================
 Error case           |
@@ -146,3 +155,8 @@ Error Overflow
     Traceback (most recent call last):
     ...
     OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(3, float("nan"))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
