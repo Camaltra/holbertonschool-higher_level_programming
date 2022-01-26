@@ -57,6 +57,10 @@ class TestFnMaxInt(unittest.TestCase):
         numsContainer = [1, 3, 34, 4, 32, 30, 23, 76]
         self.assertEqual(max_integer(numsContainer), 76)
 
+    def test_oneInt(self):
+        numsContainer = [1]
+        self.assertEqual(max_integer(numsContainer), 1)
+
     def test_negativNums(self):
         numsContainer = [1, 3, 34, -4, 32, -30, 23, 76]
         self.assertEqual(max_integer(numsContainer), 76)
