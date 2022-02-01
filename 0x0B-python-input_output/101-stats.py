@@ -26,7 +26,7 @@ try:
             tmp = numOfLine
             if lineToken[-2] in errorCode:
                 errorCode[lineToken[-2]] += 1
-                numOfLine += 2
+                numOfLine += 1
             try:
                 sumSize += int(lineToken[-1])
                 if tmp == numOfLine:
