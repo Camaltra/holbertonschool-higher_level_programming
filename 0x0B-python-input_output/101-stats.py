@@ -32,7 +32,6 @@ try:
             except:
                 if tmp == numOfLine:
                     continue
-
         if numOfLine % 10 == 0:
             print("File size: {:d}".format(sumSize))
             for key, value in sorted(errorCode.items()):
