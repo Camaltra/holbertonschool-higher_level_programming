@@ -11,4 +11,4 @@ def class_to_json(obj):
     """
     Transform a class into a json object
     """
-    return json.dumps(vars(obj))
+    return vars(obj)

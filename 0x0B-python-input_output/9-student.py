@@ -4,8 +4,6 @@
 Create a class of student
 """
 
-import json
-
 
 class Student:
     """
