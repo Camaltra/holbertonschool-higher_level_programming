@@ -4,8 +4,6 @@
 Transform a class into a json object
 """
 
-import json
-
 
 def class_to_json(obj):
     """
