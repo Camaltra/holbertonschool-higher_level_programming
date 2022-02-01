@@ -23,10 +23,17 @@ try:
     for line in sys.stdin:
         lineToken = line.split()
         if len(line) >= 2:
+            tmp = numOfLine
             if lineToken[-2] in errorCode:
                 errorCode[lineToken[-2]] += 1
-            sumSize += int(lineToken[-1])
-            numOfLine += 1
+                numOfLine += 2
+            try:
+                sumSize += int(lineToken[-1])
+                if tmp == numOfLine:
+                    numOfLine += 1
+            except:
+                if tmp == numOfLine:
+                    continue
 
         if numOfLine % 10 == 0:
             print("File size: {:d}".format(sumSize))
