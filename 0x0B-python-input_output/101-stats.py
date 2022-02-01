@@ -22,7 +22,7 @@ sumSize = 0
 try:
     for line in sys.stdin:
         lineToken = line.split()
-        if len(line) >= 2
+        if len(line) >= 2:
             if lineToken[-2] in errorCode:
                 errorCode[lineToken[-2]] += 1
                 numOfLine += 1
