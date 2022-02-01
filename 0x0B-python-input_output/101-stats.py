@@ -22,23 +22,31 @@ sumSize = 0
 try:
     for line in sys.stdin:
         lineToken = line.split()
+        tmp = numOfLine
         if lineToken[-2] in errorCode:
             errorCode[lineToken[-2]] += 1
-        sumSize += int(lineToken[-1])
-        numOfLine += 1
+            numOfLine += 1
+        try:
+            sumSize += int(lineToken[-1])
+            if tmp == numOfLine:
+                numOfLine += 1
+
+        except:
+            if tmp == numOfLine:
+                continue
 
         if numOfLine % 10 == 0:
-            print("File size: {}".format(sumSize))
+            print("File size: {:d}".format(sumSize))
             for key, value in sorted(errorCode.items()):
                 if value:
-                    print("{}: {}".format(key, value))
-    print("File size: {}".format(sumSize))
+                    print("{:s}: {:d}".format(key, value))
+    print("File size: {:d}".format(sumSize))
     for key, value in sorted(errorCode.items()):
         if value:
-            print("{}: {}".format(key, value))
+            print("{:s}: {:d}".format(key, value))
 
 except KeyboardInterrupt:
-    print("File size: {}".format(sumSize))
+    print("File size: {:d}".format(sumSize))
     for key, value in sorted(errorCode.items()):
         if value:
-            print("{}: {}".format(key, value))
+            print("{:s}: {:d}".format(key, value))
