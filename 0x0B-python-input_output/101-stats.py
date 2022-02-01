@@ -28,17 +28,17 @@ try:
         numOfLine += 1
 
         if numOfLine % 10 == 0:
-            print("File size: {:d}".format(sumSize))
+            print("File size: {}".format(sumSize))
             for key, value in sorted(errorCode.items()):
                 if value:
-                    print("{:s}: {:d}".format(key, value))
-    print("File size: {:d}".format(sumSize))
+                    print("{}: {}".format(key, value))
+    print("File size: {}".format(sumSize))
     for key, value in sorted(errorCode.items()):
         if value:
-            print("{:s}: {:d}".format(key, value))
+            print("{}: {}".format(key, value))
 
 except KeyboardInterrupt:
-    print("File size: {:d}".format(sumSize))
+    print("File size: {}".format(sumSize))
     for key, value in sorted(errorCode.items()):
         if value:
-            print("{:s}: {:d}".format(key, value))
+            print("{}: {}".format(key, value))
