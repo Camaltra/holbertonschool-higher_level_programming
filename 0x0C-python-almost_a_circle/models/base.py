@@ -6,6 +6,7 @@ Create the fundement of geometric stuff
 
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -107,17 +108,29 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """
+        Save instances into cvs file
+        Args:
+            list_objs (list): List of obj to save into csv
+        Returns: Anything
+        """
         filename = cls.__name__ + ".csv"
         with open(filename, "w+", encoding="utf-8") as f:
             writer = csv.writer(f)
             for elem in list_objs:
                 if cls.__name__ == "Rectangle":
-                    writer.writerow([elem.id, elem.width, elem.height, elem.x, elem.y])
+                    writer.writerow(
+                        [elem.id, elem.width, elem.height, elem.x, elem.y])
                 else:
                     writer.writerow([elem.id, elem.size, elem.x, elem.y])
 
     @classmethod
     def load_from_file_csv(cls):
+        """
+        Load instance from csv file
+        Args:
+        Returns: A list of all instances
+        """
         filename = cls.__name__ + ".csv"
         listOfObjs = []
         try:
@@ -144,3 +157,37 @@ class Base:
             return listOfObjs
         except:
             return []
+
+    def draw(list_rectangles, list_squares):
+        """
+        Draw the given rectangle, or square
+        Args:
+            list_rectangles (list): List of all instances of rectangle to diplay
+            list_squares (list): list of all instances of square to display
+        Returns: Anything
+        """
+        wn = turtle.Screen()
+        turtle.bgcolor('#61657F')
+        myLittleTurtle = turtle.Turtle()
+        myLittleTurtle.shape('circle')
+
+        for elem in list_rectangles:
+            myLittleTurtle.up()
+            myLittleTurtle.goto(elem.x, elem.y)
+            myLittleTurtle.down()
+            for i in range(2):
+                myLittleTurtle.fd(elem.width)
+                myLittleTurtle.lt(90)
+                myLittleTurtle.fd(elem.height)
+                myLittleTurtle.lt(90)
+
+        for elem in list_squares:
+            myLittleTurtle.up()
+            myLittleTurtle.goto(elem.x, elem.y)
+            myLittleTurtle.down()
+            for i in range(4):
+                myLittleTurtle.fd(elem.size)
+                myLittleTurtle.lt(90)
+
+        myLittleTurtle.hideturtle()
+        turtle.exitonclick()
