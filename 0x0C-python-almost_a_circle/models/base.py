@@ -95,15 +95,16 @@ class Base:
         Returns: The list of the created figure
         """
         filename = cls.__name__ + ".json"
+        listOfInstance = []
         try:
             with open(filename, "r") as f:
                 buf = f.read()
                 listOfInstance = cls.from_json_string(buf)
                 for i in range(len(listOfInstance)):
                     listOfInstance[i] = cls.create(**listOfInstance[i])
-            return listOfInstance
-        except FileExistsError:
-            return []
+        except:
+            pass
+        return listOfInstance
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
