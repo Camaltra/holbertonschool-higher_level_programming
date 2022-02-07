@@ -30,7 +30,7 @@ class Square(Rectangle):
         Returns: The infos about it
         """
         return "[Square] ({:d}) {:d}/{:d} - {:d}".format(
-            self.id, self.x, self.y, self.width
+            self.id, self.x, self.y, self.size
         )
 
     @property
