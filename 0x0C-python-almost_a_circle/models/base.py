@@ -102,7 +102,7 @@ class Base:
                 listOfInstance = cls.from_json_string(buf)
                 for i in range(len(listOfInstance)):
                     listOfInstance[i] = cls.create(**listOfInstance[i])
-        except FileExistsError:
+        except OSError:
             pass
         return listOfInstance
 
