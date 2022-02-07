@@ -4,8 +4,6 @@
 Create a square from Rectangle class
 """
 
-
-from ctypes import sizeof
 from models.rectangle import Rectangle
 
 
@@ -15,10 +13,22 @@ class Square(Rectangle):
     """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """
+        Init the square
+        Args:
+            size (int): Size of the square
+            x (int): The x postion
+            y (int): the y position
+            id (all): Id of the square
+        """
         super().__init__(size, size, x, y, id)
         self.__size = size
 
     def __str__(self):
+        """
+        Describe the created square.
+        Returns: The infos about it
+        """
         return "[Square] ({:d}) {:d}/{:d} - {:d}".format(
             self.id, self.x, self.y, self.size
         )

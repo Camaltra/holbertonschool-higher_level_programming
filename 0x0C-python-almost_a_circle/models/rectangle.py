@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Create a rectangle from Base class
+"""
 
 from models.base import Base
 

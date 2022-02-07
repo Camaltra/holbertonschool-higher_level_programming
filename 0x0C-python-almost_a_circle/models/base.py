@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-
 """
 Create the fundement of geometric stuff
 """
 
 import json
 import csv
-import turtle
+from turtle import *
 
 
 class Base:
@@ -120,7 +119,8 @@ class Base:
             for elem in list_objs:
                 if cls.__name__ == "Rectangle":
                     writer.writerow(
-                        [elem.id, elem.width, elem.height, elem.x, elem.y])
+                        [elem.id, elem.width, elem.height, elem.x, elem.y]
+                        )
                 else:
                     writer.writerow([elem.id, elem.size, elem.x, elem.y])
 
@@ -155,21 +155,21 @@ class Base:
                     newObj = cls.create(**newObj)
                     listOfObjs.append(newObj)
             return listOfObjs
-        except:
+        except FileExistsError:
             return []
 
     def draw(list_rectangles, list_squares):
         """
         Draw the given rectangle, or square
         Args:
-            list_rectangles (list): List of all instances of rectangle to diplay
-            list_squares (list): list of all instances of square to display
+            list_rectangles (list): List of all instances of rectangle to draw
+            list_squares (list): list of all instances of square to draw
         Returns: Anything
         """
         wn = turtle.Screen()
-        turtle.bgcolor('#61657F')
+        turtle.bgcolor("#61657F")
         myLittleTurtle = turtle.Turtle()
-        myLittleTurtle.shape('circle')
+        myLittleTurtle.shape("circle")
 
         for elem in list_rectangles:
             myLittleTurtle.up()
