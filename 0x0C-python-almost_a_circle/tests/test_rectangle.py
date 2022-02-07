@@ -192,6 +192,11 @@ class TestRectangle(unittest.TestCase):
             r1 = Rectangle(10, 2)
             r1.height = 0
 
+    def test_zero_height2(self):
+        """fuction that test for ValueError"""
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(10, 0)
+
     # TypeError
 
     def test_too_many_arguments(self):
