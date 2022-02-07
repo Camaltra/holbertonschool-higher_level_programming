@@ -22,7 +22,7 @@ class Square(Rectangle):
             id (all): Id of the square
         """
         super().__init__(size, size, x, y, id)
-        self.__size = size
+        self.size = size
 
     def __str__(self):
         """
@@ -39,7 +39,7 @@ class Square(Rectangle):
         Getter function for size
         Returns: The size var
         """
-        return self.witdh
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -51,6 +51,7 @@ class Square(Rectangle):
         """
         self.width = value
         self.height = value
+        self.__size = value
 
     def update(self, *args, **kwargs):
         """
