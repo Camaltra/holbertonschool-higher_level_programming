@@ -55,6 +55,18 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(r3.y, 0)
         self.assertEqual(r3.id, 2)
 
+
+    def test_priority_width_height(self):
+        """fuction that test for TypeError"""
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square("str", "str", 3, None)
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square("str", -2, 3, None)
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Square(-1, -2, 3, None)
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Square(-1, "str", 3, None)
+
     # tests getters
 
     def test_getter_width(self):
