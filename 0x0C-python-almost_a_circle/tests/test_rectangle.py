@@ -111,6 +111,17 @@ class TestRectangle(unittest.TestCase):
         module_class = len(Rectangle.to_dictionary.__doc__)
         self.assertGreater(module_class, 0)
 
+    def test_priority_width_height(self):
+        """fuction that test for TypeError"""
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle("str", "str", 3, None)
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle("str", -2, 3, None)
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Rectangle(-1, -2, 3, None)
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
+            Rectangle(-1, "str", 3, None)
+
     def test_subclass(self):
         """fuction that test if Rectangle is a subclass of Base"""
         self.assertTrue(issubclass(Rectangle, Base))
