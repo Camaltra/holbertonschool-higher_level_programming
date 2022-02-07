@@ -51,7 +51,7 @@ class TestSquareClass(unittest.TestCase):
     def test_valid_case(self):
         """Test some valid cases with Square"""
         s1 = Square(5)
-        self.assertEqual(s1.id, 33)
+        self.assertEqual(s1.id, 13)
         self.assertEqual(s1.size, 5)
         self.assertEqual(s1.x, 0)
         self.assertEqual(s1.y, 0)
@@ -67,7 +67,7 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(s2.height, 653)
 
         s3 = Square(4, 3, 3, None)
-        self.assertEqual(s3.id, 34)
+        self.assertEqual(s3.id, 14)
         self.assertEqual(s3.size, 4)
         self.assertEqual(s3.x, 3)
         self.assertEqual(s3.y, 3)
@@ -329,11 +329,11 @@ class TestSquareClass(unittest.TestCase):
         )
         self.assertEqual(
             r2.to_dictionary(),
-            {"id": 30, "x": 3, "size": 1, "y": 4},
+            {"id": 10, "x": 3, "size": 1, "y": 4},
         )
         self.assertEqual(
             r3.to_dictionary(),
-            {"id": 31, "x": 0, "size": 1, "y": 0},
+            {"id": 11, "x": 0, "size": 1, "y": 0},
         )
 
     ##########################################################
