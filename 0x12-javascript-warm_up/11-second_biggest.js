@@ -2,9 +2,9 @@
 
 const arrayArg = process.argv.slice(2);
 
-if (arrayArg.length <= 1) {
-  console.log('0');
-} else {
+let secondMax = 0;
+if (arrayArg.length > 1) {
   arrayArg.sort();
-  console.log(arrayArg[arrayArg.length - 2]);
+  secondMax = arrayArg[arrayArg.length - 2];
 }
+console.log(secondMax);
