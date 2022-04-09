@@ -7,8 +7,8 @@ Adding commenting
 """
 
 import sys
-from model_state import Base, State
-from model_city import City
+from relationship_state import State
+from relationship_city import Base, City
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
@@ -25,9 +25,6 @@ if __name__ == "__main__":
     session = Session(engine)
     for state in session.query(State).order_by(State.id):
         print("{}: {}".format(state.id, state.name))
-        for city in (
-            session.query(City).filter(state.id == City.state_id).
-            order_by(City.id)
-        ):
+        for city in state.cities:
             print("    {}: {}".format(city.id, city.name))
     session.close()
