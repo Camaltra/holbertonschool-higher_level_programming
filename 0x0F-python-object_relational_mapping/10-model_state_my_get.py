@@ -24,6 +24,7 @@ if __name__ == "__main__":
         if state:
             print(f"{state.id}")
             found = True
+            break
     if not found:
         print("Not found")
     session.close()
