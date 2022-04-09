@@ -18,8 +18,8 @@ if "__main__" == __name__:
     )
     cur = conn.cursor()
     cur.execute(
-        f"SELECT * FROM states WHERE name LIKE '{sys.argv[4]}'\
-        ORDER BY id ASC"
+        "SELECT * FROM states WHERE name LIKE '{}'\
+        ORDER BY id ASC".format(sys.argv[4])
     )
     query_rows = cur.fetchall()
     for row in query_rows:
