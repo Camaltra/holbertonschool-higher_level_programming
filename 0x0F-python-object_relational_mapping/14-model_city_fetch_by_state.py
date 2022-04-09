@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+"""
+Display cities with thir ID and State
+"""
+
 import sys
 from model_state import Base, State
 from model_city import City

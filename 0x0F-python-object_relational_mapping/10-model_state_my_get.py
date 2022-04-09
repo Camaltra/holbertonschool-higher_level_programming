@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+"""
+Print the state object id
+"""
+
 import sys
 from model_state import Base, State
 

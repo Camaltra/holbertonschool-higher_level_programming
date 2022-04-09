@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+"""
+Display all the cities with a inside
+"""
+
 import sys
 from model_state import Base, State
 
