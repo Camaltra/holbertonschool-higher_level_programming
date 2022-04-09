@@ -27,5 +27,5 @@ if __name__ == "__main__":
             session.query(City).filter(state.id == City.state_id).
             order_by(City.id)
         ):
-            print("\t{}: {}".format(city.id, city.name))
+            print("    {}: {}".format(city.id, city.name))
     session.close()
