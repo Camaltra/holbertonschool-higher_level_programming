@@ -2,22 +2,18 @@
 
 """
 Create a base of City, in relation with state
+adding line of comment
 """
 
-from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, ForeignKey
 
 Base = declarative_base()
 
+
 class City(Base):
-    """
-    Class : Cities
-    
-    Attribute:
-        id (int)
-        name (int)
-        state_id (int)
-    """
+    """Class City"""
+
     __tablename__ = 'cities'
     id = Column(Integer, autoincrement=True,
                 primary_key=True, nullable=False, unique=True)

@@ -2,21 +2,16 @@
 
 """
 Create a base State in relation with city
+Adding line of comment
 """
-
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
-from relationship_city import Base, City
+from relationship_city import City, Base
+
 
 class State(Base):
-    """Class : State
-        
-    Attribute:
-        id (int)
-        name (int)
-        cities (list)
-    """
+    """Class State"""
 
     __tablename__ = 'states'
     id = Column(Integer, autoincrement=True,

@@ -2,6 +2,7 @@
 
 """
 Create a cities, related to a state
+adding line of comment
 """
 
 import sys
