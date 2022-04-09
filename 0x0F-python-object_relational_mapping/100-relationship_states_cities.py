@@ -12,6 +12,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
 if __name__ == "__main__":
+    newState = State(name="California")
+    newCity = City(name="San Francisco", state=newState) 
     engine = create_engine(
         "mysql+mysqldb://{}:{}@localhost/{}".format(
             sys.argv[1], sys.argv[2], sys.argv[3]
@@ -21,8 +23,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 
     session = Session(engine)
-    newState = State(name="California")
-    newCity = City(name="San Francisco", state=newState)
     session.add(newState)
     session.add(newCity)
     session.commit()
