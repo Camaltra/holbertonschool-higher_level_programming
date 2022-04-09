@@ -13,7 +13,14 @@ Base = declarative_base()
 
 
 class City(Base):
-    """Class : Cities"""
+    """
+    Class : Cities
+    
+    Attribute:
+        id (int)
+        name (int)
+        state_id (int)
+    """
 
     __tablename__ = "cities"
     id = Column(Integer, primary_key=True)
