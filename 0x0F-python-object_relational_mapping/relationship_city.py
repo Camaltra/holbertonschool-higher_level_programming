@@ -21,7 +21,6 @@ class City(Base):
         name (int)
         state_id (int)
     """
-
     __tablename__ = "cities"
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)

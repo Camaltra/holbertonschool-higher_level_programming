@@ -11,7 +11,13 @@ from relationship_city import Base, City
 
 
 class State(Base):
-    """Class : State"""
+    """Class : State
+        
+    Attribute:
+        id (int)
+        name (int)
+        cities (list)
+    """
 
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True)
