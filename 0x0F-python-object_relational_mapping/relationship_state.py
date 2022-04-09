@@ -1,21 +1,19 @@
 #!/usr/bin/python3
+"""
+contains the class definition of a State and an instance Base
+"""
 
-"""
-Create a base State in relation with city
-Adding line of comment
-"""
-from sqlalchemy.ext.declarative import declarative_base
+import sqlalchemy
 from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-from relationship_city import City, Base
+
+Base = declarative_base()
 
 
 class State(Base):
-    """Class State"""
-
+    """Representation of a state"""
     __tablename__ = 'states'
-    id = Column(Integer, autoincrement=True,
-                primary_key=True, nullable=False, unique=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
-    cities = relationship('City', backref='state',
-                          cascade='all, delete-orphan')
+    cities = relationship("City", backref="state")
