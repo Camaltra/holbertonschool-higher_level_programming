@@ -1,4 +1,4 @@
-<h1 align="center">0x0D-SQL_introduction</h1>
+<h1 align="center">0x10-python-network_0</h1>
 
 <h3 align="center">Made on Ubuntu 20.04</h3>
 <h3 align="center">Made on Python3.8</h3>
