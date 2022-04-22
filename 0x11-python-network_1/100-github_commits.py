@@ -15,5 +15,5 @@ if __name__ == "__main__":
             break
         print("{}: {}".format(
                         commit.get("sha"),
-                        commit.get("commit").get("committer").get("name")))
+                        commit.get("commit").get("author").get("name")))
         count += 1
