@@ -6,7 +6,7 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    if len(sys.argv <= 1):
+    if len(sys.argv) <= 1:
         q = ""
     else:
         q = sys.argv[1]
@@ -15,10 +15,10 @@ if __name__ == "__main__":
     try:
         responseDict = r.json()
         name = responseDict.get("name")
-        id = responseDict.get("id")
-        if id is None or name is None:
+        idUser = responseDict.get("id")
+        if idUser is None or name is None:
             print("No result")
         else:
-            print("[{}] {}".format(id, name))
+            print("[{}] {}".format(idUser, name))
     except Exception:
         print("Not a valid JSON")
