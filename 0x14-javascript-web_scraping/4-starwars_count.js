@@ -9,7 +9,7 @@ async function getMethod (URL) {
       let counter = 0;
       for (const film of res.data.results) {
         for (const listActors of film.characters) {
-          if (listActors.includes('https://swapi-api.hbtn.io/api/people/18/')) {
+          if (listActors.includes('people/18/')) {
             counter++;
           }
         }
