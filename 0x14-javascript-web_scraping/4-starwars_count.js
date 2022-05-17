@@ -17,7 +17,7 @@ async function getMethod (URL) {
       console.log(counter);
     })
     .catch((err) => {
-      console.error(`code :${err.response.status}`);
+      console.error(err);
     });
 }
 
