@@ -1,8 +1,16 @@
 #!/usr/bin/node
 
-const r = require('request');
+ const axios = require('axios');
 
-r.get(process.argv[2], (err, res) => {
-  if (err) console.log(err);
-  else console.log('code: ' + res.statusCode);
-});
+ const URL = process.argv[2];
+
+ async function getMethod (URL) {
+   await axios.get(URL)
+     .then((res) => {
+       console.log(`code: ${res.status}`);
+     }).catch((err) => {
+       console.log(`code: ${err.response.status}`);
+     });
+ }
+
+ getMethod(URL);
