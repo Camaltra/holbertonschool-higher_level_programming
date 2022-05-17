@@ -23,11 +23,11 @@ async function getAllDoneTaskById (API_URL) {
         }
         finalList[String(userId)] = finishedTask;
       }
+      console.log(finalList);
     })
     .catch((err) => {
       console.error(err);
     });
-  console.log(finalList);
 }
 
 getAllDoneTaskById(API_URL);
