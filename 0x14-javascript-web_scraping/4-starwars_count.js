@@ -7,7 +7,6 @@ async function getMethod (URL) {
   await axios.get(`${URL}`)
     .then((res) => {
       let counter = 0;
-      console.log(res.data.results);
       for (const film of res.data.results) {
         for (const listActors of film.characters) {
           if (listActors.includes('https://swapi-api.hbtn.io/api/people/18/')) {
