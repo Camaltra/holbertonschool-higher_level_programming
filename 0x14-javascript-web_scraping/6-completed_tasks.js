@@ -6,18 +6,15 @@ const API_URL = process.argv[2];
 
 async function getAllDoneTaskById (API_URL) {
   const finalList = {};
-  let userId = 1;
-  let finishedTask = 0;
+  let val;
   await axios.get(API_URL)
     .then((res) => {
-      for (const task of res.data) {
-        if (userId !== task.userId) {
-          finalList[String(userId)] = finishedTask;
-          userId++;
-          finishedTask = 0;
-        }
-        if (task.completed) {
-          finishedTask++;
+      for ([, val] of Object.entries(res.data)) {
+        if (val.completed === true) {
+          if (finalList[val.userId] === undefined) {
+            finalList[val.userId] = 0;
+          }
+          finalList[val.userId] += 1;
         }
       }
       console.log(finalList);
